@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <title>Mateo Vergara</title>
+    <link rel="icon" href="static\favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="static\logo.png" alt="Mateo Logo">
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="about_me.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="#contact" class="contact-btn">Contact Me</a>  
+        </div>
+    </nav>
+    <!-- Nueva sección de proyectos -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+                <button class="filter-btn" data-filter="modules">Python Modules</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Machine Learning Project -->
+                <div class="project-card machine-learning">
+                    <div class="project-img">
+                        <img src="/api/placeholder/600/400" alt="Machine Learning Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Time Series Forecasting Model</h3>
+                        <p>LSTM Neural Network implementation for predicting financial market trends with high accuracy using PyTorch.</p>
+                        <div class="project-tags">
+                            <span>PyTorch</span>
+                            <span>Time Series</span>
+                            <span>Neural Networks</span>
+                        </div>
+                        <a href="#" class="project-link">See Project</a>
+                    </div>
+                </div>
+
+                <!-- Data Analysis Project -->
+                <div class="project-card data-analysis">
+                    <div class="project-img">
+                        <img src="/api/placeholder/600/400" alt="Data Analysis Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Customer Segmentation Analysis</h3>
+                        <p>Comprehensive customer segmentation using clustering algorithms to identify key market segments.</p>
+                        <div class="project-tags">
+                            <span>Pandas</span>
+                            <span>Scikit-learn</span>
+                            <span>Visualization</span>
+                        </div>
+                        <a href="#" class="project-link">See Project</a>
+                    </div>
+                </div>
+
+                <!-- Python Module Project -->
+                <div class="project-card modules">
+                    <div class="project-img">
+                        <img src="/api/placeholder/600/400" alt="Python Module Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>StatTools Library</h3>
+                        <p>Custom Python module with statistical functions and Tkinter GUI for data processing and file manipulation.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Tkinter</span>
+                            <span>Statistical Analysis</span>
+                        </div>
+                        <a href="#" class="project-link">See Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Mateo Vergara Roa. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
