@@ -1,4 +1,4 @@
-# Data Science & Analytics Personal Portfolio
+# Data Science & Analytics Engineering Personal Portfolio
 
 This repository contains the source code for my personal portfolio, which highlights my skills, certifications, and most important projects in the field of data science and analytics engineering. The site is built using HTML, CSS, and JavaScript to provide an interactive and professional experience.
 
