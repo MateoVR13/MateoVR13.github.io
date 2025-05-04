@@ -1,16 +1,16 @@
-# Portafolio Personal de Data Science & Analítica
+# Data Science & Analytics Engineering Personal Portfolio
 
-Este repositorio contiene el código fuente de mi portafolio personal, donde destaco mis habilidades, certificaciones y proyectos más importantes en el campo de la ciencia de datos y la ingeniería analítica. El sitio está construido utilizando **HTML**, **CSS** y **JavaScript** para proporcionar una experiencia interactiva y profesional.
+This repository contains the source code for my personal portfolio, which highlights my skills, certifications, and most important projects in the field of data science and analytics engineering. The site is built using HTML, CSS, and JavaScript to provide an interactive and professional experience.
 
-## Descripción
+## Description
 
-En este portafolio podrás encontrar:
+In this portfolio, you can find:
 
-- **Habilidades**: Un resumen de mis conocimientos en ciencia de datos, programación, y herramientas de análisis.
-- **Certificaciones**: Detalles sobre las certificaciones profesionales que he completado.
-- **Proyectos**: Enlaces a mis proyectos más relevantes en ciencia de datos.
-- **Acerca de mí**: Información sobre mi formación académica, experiencia profesional y mi enfoque en la resolución de problemas mediante datos.
+- Skills: A summary of my knowledge in data science, programming, and analytics tools.
+- Certifications: Details about the professional certifications I have completed.
+- Projects: Links to my most relevant data science projects.
+- About Me: Information about my educational background, professional experience, and my approach to solving problems with data.
 
-## Tecnologías Usadas
+## Technologies Used
 
-- **Lenguajes**: HTML, CSS, JavaScript
+- Languages: HTML, CSS, JavaScript
