@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <title>Mateo Vergara</title>
-    <link rel="icon" href="static\favicon.png" type="image/x-icon">
+    <title>About Me | Mateo Vergara</title>
+    <link rel="icon" href="static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -16,79 +16,42 @@
     <nav>
         <div class="nav-left">
             <a href="index.html" class="logo">
-                <img src="static\logo.png" alt="Mateo Logo">
+                <img src="static/logo.png" alt="Mateo Logo">
             </a>
         </div>
         <div class="nav-right">
-            <a href="about_me.html">About Me</a>
-            <a href="projects.html">Projects</a>
-            <a href="#contact" class="contact-btn">Contact Me</a>
+            <div class="language-selector-nav">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
+            <a href="about_me.html" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</a>
+            <a href="projects.html" data-lang-en="Projects" data-lang-es="Proyectos">Projects</a>
+            <a href="contact.html" class="contact-btn" data-lang-en="Contact Me" data-lang-es="Contáctame">Contact Me</a>
         </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
 
-    <!-- Nueva sección About Me -->
     <section id="about" class="about-section">
         <div class="about-container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="es">Español</button>
-            </div>
-
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
 
             <div class="about-content">
                 <div class="about-image">
                     <img src="static/Mateo.jpg" alt="Mateo Vergara">
                 </div>
-
                 <div class="about-info">
-                    <!-- Contenido en inglés -->
-                    <div class="lang-content active" data-lang="en">
-                        <p class="about-text">
-                            Software Engineer with a focus on Data Science, interested in developing data-driven
-                            solutions that make a real impact. I have extensive knowledge in programming, statistical
-                            analysis, and machine learning, along with strong analytical skills to
-                            understand, model, and solve problems across various contexts, with a particular interest in
-                            the financial sector.
-                        </p>
-                        <p class="about-text">
-                            With experience in Python, SQL, R, data visualization and various machine learning
-                            frameworks such as PyTorch,
-                            Scikit-Learn, as well as data manipulation libraries like Pandas and NumPy. I am constantly
-                            exploring new technologies
-                            and methodologies to enhance my skills and create innovative, adaptable solutions across
-                            various contexts.
-                        </p>
-                    </div>
-
-                    <!-- Contenido en español -->
-                    <div class="lang-content" data-lang="es">
-                        <p class="about-text">
-                            Ingeniero de Sistemas con enfoque en Ciencia de Datos, enfocado en el desarrollo de
-                            soluciones
-                            basadas en datos que generen impacto real. Con alto conocimiento en programación, análisis
-                            estadístico, machine learning y capacidades técnicas analíticas para
-                            comprender,
-                            modelar y resolver problemas en distintos contextos, con especial interés en el sector
-                            financiero.
-                        </p>
-                        <p class="about-text">
-                            Con experiencia en Python, SQL, R, visualización de datos y diversos frameworks de machine
-                            learning como PyTorch,
-                            Scikit-Learn, así como en librerías de manipulación de datos como Pandas y NumPy. Estoy en
-                            constante exploración de nuevas tecnologías y metodologías para potenciar mis habilidades y
-                            construir soluciones innovadoras y adaptables a distintos contextos.
-                        </p>
-                    </div>
+                    <p class="about-text" data-lang-en="Software Engineer with a focus on Data Science, interested in developing data-driven solutions that make a real impact. I have extensive knowledge in programming, statistical analysis, and machine learning, along with strong analytical skills to understand, model, and solve problems across various contexts, with a particular interest in the financial sector." data-lang-es="Ingeniero de Sistemas con enfoque en Ciencia de Datos, enfocado en el desarrollo de soluciones basadas en datos que generen impacto real. Con alto conocimiento en programación, análisis estadístico, machine learning y capacidades técnicas analíticas para comprender, modelar y resolver problemas en distintos contextos, con especial interés en el sector financiero."></p>
+                    <p class="about-text" data-lang-en="With experience in Python, SQL, R, data visualization and various machine learning frameworks such as PyTorch, Scikit-Learn, as well as data manipulation libraries like Pandas and NumPy. I am constantly exploring new technologies and methodologies to enhance my skills and create innovative, adaptable solutions across various contexts." data-lang-es="Con experiencia en Python, SQL, R, visualización de datos y diversos frameworks de machine learning como PyTorch, Scikit-Learn, así como en librerías de manipulación de datos como Pandas y NumPy. Estoy en constante exploración de nuevas tecnologías y metodologías para potenciar mis habilidades y construir soluciones innovadoras y adaptables a distintos contextos."></p>
                 </div>
             </div>
 
-            <!-- Sección de certificaciones -->
             <div class="certifications">
-                <h3 class="subsection-title lang-text" data-lang="en">Professional Certifications</h3>
-                <h3 class="subsection-title lang-text" data-lang="es">Certificaciones Profesionales</h3>
-
+                <h3 class="subsection-title" data-lang-en="Professional Certifications" data-lang-es="Certificaciones Profesionales">Professional Certifications</h3>
                 <div class="cert-grid">
                     <div class="cert-card">
                         <div class="cert-badge">
@@ -96,102 +59,47 @@
                         </div>
                         <div class="cert-info">
                             <h4>IBM Data Science Professional Certificate</h4>
-                            <p class="lang-text" data-lang="en">Comprehensive data science training covering the entire
-                                data science process.</p>
-                            <p class="lang-text" data-lang="es">Formación integral en ciencia de datos que cubre todo el
-                                proceso de la ciencia de datos.</p>
+                            <p data-lang-en="Comprehensive data science training covering the entire data science process." data-lang-es="Formación integral en ciencia de datos que cubre todo el proceso de la ciencia de datos."></p>
                         </div>
                     </div>
-
                     <div class="cert-card">
                         <div class="cert-badge">
                             <img src="static/iTEP.png" alt="iTEP English Certificate">
                         </div>
                         <div class="cert-info">
                             <h4>iTEP English Certificate - C1 Level</h4>
-                            <p class="lang-text" data-lang="en">International certification validating advanced English
-                                proficiency.</p>
-                            <p class="lang-text" data-lang="es">Certificación internacional que valida un nivel avanzado
-                                de inglés.</p>
+                            <p data-lang-en="International certification validating advanced English proficiency." data-lang-es="Certificación internacional que valida un nivel avanzado de inglés."></p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sección de habilidades -->
             <div class="skills-section">
-                <h3 class="subsection-title lang-text" data-lang="en">Skills & Knowledge</h3>
-                <h3 class="subsection-title lang-text" data-lang="es">Habilidades & Conocimientos</h3>
-
+                <h3 class="subsection-title" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Skills & Knowledge</h3>
                 <div class="skills-container">
                     <div class="skills-column">
-                        <h4 class="skills-category lang-text" data-lang="en">Programming Languages</h4>
-                        <h4 class="skills-category lang-text" data-lang="es">Lenguajes de Programación</h4>
+                        <h4 class="skills-category" data-lang-en="Programming Languages" data-lang-es="Lenguajes de Programación">Programming Languages</h4>
                         <ul class="skills-list">
-                            <li><span class="skill-name">Python</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">SQL</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">R</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
+                            <li><span class="skill-name">Python</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
+                            <li><span class="skill-name">SQL</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
+                            <li><span class="skill-name">R</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
                         </ul>
                     </div>
-
                     <div class="skills-column">
-                        <h4 class="skills-category lang-text" data-lang="en">Technical Knowledge</h4>
-                        <h4 class="skills-category lang-text" data-lang="es">Conocimientos Técnicos</h4>
+                        <h4 class="skills-category" data-lang-en="Technical Knowledge" data-lang-es="Conocimientos Técnicos">Technical Knowledge</h4>
                         <ul class="skills-list">
-                            <li><span class="skill-name">Statistics</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">Linear Algebra</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 80%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">Machine Learning</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">MLOps</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 70%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">Data Analysis</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
+                            <li><span class="skill-name">Statistics</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
+                            <li><span class="skill-name">Linear Algebra</span><div class="skill-level"><div class="skill-progress" style="width: 80%"></div></div></li>
+                            <li><span class="skill-name">Machine Learning</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
+                            <li><span class="skill-name">MLOps</span><div class="skill-level"><div class="skill-progress" style="width: 70%"></div></div></li>
+                            <li><span class="skill-name">Data Analysis</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
                         </ul>
                     </div>
-
                     <div class="skills-column">
-                        <h4 class="skills-category lang-text" data-lang="en">Languages</h4>
-                        <h4 class="skills-category lang-text" data-lang="es">Idiomas</h4>
+                        <h4 class="skills-category" data-lang-en="Languages" data-lang-es="Idiomas">Languages</h4>
                         <ul class="skills-list">
-                            <li><span class="skill-name">Spanish (Native)</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 100%"></div>
-                                </div>
-                            </li>
-                            <li><span class="skill-name">English (C1)</span>
-                                <div class="skill-level">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </li>
+                            <li><span class="skill-name" data-lang-en="Spanish (Native)" data-lang-es="Español (Nativo)">Spanish (Native)</span><div class="skill-level"><div class="skill-progress" style="width: 100%"></div></div></li>
+                            <li><span class="skill-name">English (C1)</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
                         </ul>
                     </div>
                 </div>
@@ -200,11 +108,9 @@
     </section>
 
     <footer>
-        <p class="footer-text">&copy; 2024 Mateo Vergara Roa. All rights reserved.</p>
+        <p class="footer-text" data-lang-en="© 2024 Mateo Vergara Roa. All rights reserved." data-lang-es="© 2024 Mateo Vergara Roa. Todos los derechos reservados.">© 2024 Mateo Vergara Roa. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
-
 </body>
-
 </html>
