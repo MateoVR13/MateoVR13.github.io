@@ -78,11 +78,20 @@ nav.scrolled {
 }
 
 .contact-btn {
+    display: inline-flex;      /* << AÑADIDO: Trata el botón como un contenedor flex en línea */
+    align-items: center;       /* << AÑADIDO: Centra verticalmente el contenido (el texto) */
+    justify-content: center;   /* << AÑADIDO: Centra horizontalmente el contenido */
     background-color: #000;
-    color: white !important; /* Important to override link color */
+    color: white !important;
     padding: 10px 20px;
     border-radius: 5px;
     transition: all 0.3s ease;
+    text-decoration: none; /* Asegura que no haya subrayado del link */
+}
+
+/* No olvides quitar el ::after que le pusimos a todos los 'a' del nav */
+.contact-btn::after {
+    display: none !important;
 }
 
 .contact-btn:hover {
@@ -90,7 +99,6 @@ nav.scrolled {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.contact-btn::after { display: none !important; }
 
 
 /* Language Selector in Nav */
