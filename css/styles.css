@@ -29,11 +29,17 @@ nav {
     width: 100%;
     z-index: 1000;
     transition: padding 0.3s ease, box-shadow 0.3s ease;
+    min-height: 60px; /* Altura mínima para mejor centrado */
 }
 
 nav.scrolled {
     padding: 8px 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
@@ -59,6 +65,10 @@ nav.scrolled {
     transition: color 0.3s ease;
     position: relative;
     padding-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+    height: 40px; /* Altura fija para mejor centrado */
+    line-height: 1;
 }
 
 .nav-right a::after {
@@ -78,15 +88,21 @@ nav.scrolled {
 }
 
 .contact-btn {
-    display: inline-flex;      /* << AÑADIDO: Trata el botón como un contenedor flex en línea */
-    align-items: center;       /* << AÑADIDO: Centra verticalmente el contenido (el texto) */
-    justify-content: center;   /* << AÑADIDO: Centra horizontalmente el contenido */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     background-color: #000;
     color: white !important;
-    padding: 10px 20px;
+    padding: 0 20px !important; /* Eliminar padding vertical */
     border-radius: 5px;
     transition: all 0.3s ease;
-    text-decoration: none; /* Asegura que no haya subrayado del link */
+    text-decoration: none;
+    height: 40px !important; /* Altura fija para consistencia */
+    min-width: 100px; /* Ancho mínimo para mejor apariencia */
+    line-height: 1 !important;
+    font-size: 16px !important; /* Tamaño de fuente específico */
+    vertical-align: middle !important; /* Centrado vertical adicional */
+    box-sizing: border-box !important;
 }
 
 /* No olvides quitar el ::after que le pusimos a todos los 'a' del nav */
@@ -100,14 +116,15 @@ nav.scrolled {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Language Selector in Nav */
 .language-selector-nav {
     display: flex;
     border: 1px solid #ddd;
     border-radius: 20px;
     overflow: hidden;
+    align-items: center;
 }
+
 .language-selector-nav .lang-btn {
     padding: 5px 12px;
 }
@@ -120,6 +137,11 @@ nav.scrolled {
     font-size: 14px;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    line-height: 1;
 }
 
 .lang-btn.active {
@@ -134,6 +156,10 @@ nav.scrolled {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
 }
 
 .menu-toggle span {
@@ -320,7 +346,6 @@ nav.scrolled {
 .submit-btn { background: #000; color: #fff; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s; }
 .submit-btn:hover { background: #333; transform: translateY(-2px); }
 
-
 /* === FOOTER === */
 footer {
     background-color: #f1f1f1;
@@ -350,7 +375,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .menu-toggle { display: block; }
+    .menu-toggle { display: flex; }
     .nav-right {
         position: fixed;
         top: 0;
