@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <title>Projects | Mateo Vergara</title>
     <link rel="icon" href="static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Efecto de fondo Aurora -->
+    <div class="background-aurora">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+    
     <nav>
         <div class="nav-left">
             <a href="index.html" class="logo">
@@ -35,9 +42,9 @@
     
     <section id="projects" class="projects-section">
         <div class="projects-container">
-            <h2 class="section-title" data-lang-en="Projects" data-lang-es="Proyectos">Projects</h2>
+            <h2 class="section-title animate-on-scroll" data-lang-en="Projects" data-lang-es="Proyectos">Projects</h2>
             
-            <div class="projects-filter">
+            <div class="projects-filter animate-on-scroll">
                 <button class="filter-btn active" data-filter="all" data-lang-en="All Projects" data-lang-es="Todos los Proyectos">All Projects</button>
                 <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
                 <button class="filter-btn" data-filter="data-analysis" data-lang-en="Data Analysis" data-lang-es="Análisis de Datos">Data Analysis</button>
@@ -46,7 +53,7 @@
 
             <div class="projects-grid">
                 <!-- Machine Learning Project -->
-                <div class="project-card machine-learning">
+                <div class="project-card interactive-card machine-learning animate-on-scroll">
                     <div class="project-img">
                         <img src="static/project_timeseries.png" alt="Time Series Project">
                     </div>
@@ -63,7 +70,7 @@
                 </div>
 
                 <!-- Data Analysis Project -->
-                <div class="project-card data-analysis">
+                <div class="project-card interactive-card data-analysis animate-on-scroll">
                     <div class="project-img">
                         <img src="static/project_segmentation.png" alt="Data Analysis Project">
                     </div>
@@ -80,7 +87,7 @@
                 </div>
 
                 <!-- Python Module Project -->
-                <div class="project-card modules">
+                <div class="project-card interactive-card modules animate-on-scroll">
                     <div class="project-img">
                         <img src="static/project_module.png" alt="Python Module Project">
                     </div>

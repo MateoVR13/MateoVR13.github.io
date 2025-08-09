@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <title>About Me | Mateo Vergara</title>
     <link rel="icon" href="static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <!-- Efecto de fondo Aurora -->
+    <div class="background-aurora">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+
     <nav>
         <div class="nav-left">
             <a href="index.html" class="logo">
@@ -38,9 +45,9 @@
 
     <section id="about" class="about-section">
         <div class="about-container">
-            <h2 class="section-title" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
+            <h2 class="section-title animate-on-scroll" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
 
-            <div class="about-content">
+            <div class="about-content interactive-card animate-on-scroll">
                 <div class="about-image">
                     <img src="static/Mateo.png" alt="Mateo Vergara">
                 </div>
@@ -50,58 +57,57 @@
                 </div>
             </div>
 
-            <div class="certifications">
-                <h3 class="subsection-title" data-lang-en="Professional Certifications" data-lang-es="Certificaciones Profesionales">Professional Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-card">
-                        <div class="cert-badge">
-                            <img src="static/IBM_DS_PC.png" alt="IBM Data Science Certificate">
-                        </div>
-                        <div class="cert-info">
-                            <h4>IBM Data Science Professional Certificate</h4>
-                            <p data-lang-en="Comprehensive data science training covering the entire data science process." data-lang-es="Formación integral en ciencia de datos que cubre todo el proceso de la ciencia de datos."></p>
-                        </div>
+            <h3 class="subsection-title animate-on-scroll" data-lang-en="Professional Certifications" data-lang-es="Certificaciones Profesionales">Professional Certifications</h3>
+            <div class="cert-grid">
+                <div class="cert-card interactive-card animate-on-scroll">
+                    <div class="cert-badge">
+                        <img src="static/IBM_DS_PC.png" alt="IBM Data Science Certificate">
                     </div>
-                    <div class="cert-card">
-                        <div class="cert-badge">
-                            <img src="static/iTEP.png" alt="iTEP English Certificate">
-                        </div>
-                        <div class="cert-info">
-                            <h4>iTEP English Certificate - C1 Level</h4>
-                            <p data-lang-en="International certification validating advanced English proficiency." data-lang-es="Certificación internacional que valida un nivel avanzado de inglés."></p>
-                        </div>
+                    <div class="cert-info">
+                        <h4>IBM Data Science Professional Certificate</h4>
+                        <p data-lang-en="Comprehensive data science training covering the entire data science process." data-lang-es="Formación integral en ciencia de datos que cubre todo el proceso de la ciencia de datos."></p>
+                    </div>
+                </div>
+                <div class="cert-card interactive-card animate-on-scroll">
+                    <div class="cert-badge">
+                        <img src="static/iTEP.png" alt="iTEP English Certificate">
+                    </div>
+                    <div class="cert-info">
+                        <h4>iTEP English Certificate - C1 Level</h4>
+                        <p data-lang-en="International certification validating advanced English proficiency." data-lang-es="Certificación internacional que valida un nivel avanzado de inglés."></p>
                     </div>
                 </div>
             </div>
 
-            <div class="skills-section">
-                <h3 class="subsection-title" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Skills & Knowledge</h3>
-                <div class="skills-container">
-                    <div class="skills-column">
-                        <h4 class="skills-category" data-lang-en="Programming Languages" data-lang-es="Lenguajes de Programación">Programming Languages</h4>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Python</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                            <li><span class="skill-name">SQL</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                            <li><span class="skill-name">R</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                        </ul>
-                    </div>
-                    <div class="skills-column">
-                        <h4 class="skills-category" data-lang-en="Technical Knowledge" data-lang-es="Conocimientos Técnicos">Technical Knowledge</h4>
-                        <ul class="skills-list">
-                            <li><span class="skill-name">Statistics</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                            <li><span class="skill-name">Linear Algebra</span><div class="skill-level"><div class="skill-progress" style="width: 80%"></div></div></li>
-                            <li><span class="skill-name">Machine Learning</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                            <li><span class="skill-name">MLOps</span><div class="skill-level"><div class="skill-progress" style="width: 70%"></div></div></li>
-                            <li><span class="skill-name">Data Analysis</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                        </ul>
-                    </div>
-                    <div class="skills-column">
-                        <h4 class="skills-category" data-lang-en="Languages" data-lang-es="Idiomas">Languages</h4>
-                        <ul class="skills-list">
-                            <li><span class="skill-name" data-lang-en="Spanish (Native)" data-lang-es="Español (Nativo)">Spanish (Native)</span><div class="skill-level"><div class="skill-progress" style="width: 100%"></div></div></li>
-                            <li><span class="skill-name">English (C1)</span><div class="skill-level"><div class="skill-progress" style="width: 90%"></div></div></li>
-                        </ul>
-                    </div>
+            <h3 class="subsection-title animate-on-scroll" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Skills & Knowledge</h3>
+            <div class="skills-container">
+                <!-- Columna 1: Lenguajes de Programación -->
+                <div class="skills-column interactive-card animate-on-scroll">
+                    <h4 class="skills-category" data-lang-en="Programming Languages" data-lang-es="Lenguajes de Programación">Programming Languages</h4>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-name">Python</span><span class="skill-level-indicator level-advanced" data-lang-en="Advanced" data-lang-es="Avanzado">Advanced</span></li>
+                        <li class="skill-item"><span class="skill-name">SQL</span><span class="skill-level-indicator level-advanced" data-lang-en="Advanced" data-lang-es="Avanzado">Advanced</span></li>
+                        <li class="skill-item"><span class="skill-name">R</span><span class="skill-level-indicator level-advanced" data-lang-en="Advanced" data-lang-es="Avanzado">Advanced</span></li>
+                    </ul>
+                </div>
+                <!-- Columna 2: Conocimientos Técnicos -->
+                <div class="skills-column interactive-card animate-on-scroll">
+                    <h4 class="skills-category" data-lang-en="Technical Knowledge" data-lang-es="Conocimientos Técnicos">Technical Knowledge</h4>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-name">Statistics</span><span class="skill-level-indicator level-high" data-lang-en="High" data-lang-es="Alto">High</span></li>
+                        <li class="skill-item"><span class="skill-name">Linear Algebra</span><span class="skill-level-indicator level-medium" data-lang-en="Intermediate" data-lang-es="Medio">Medium</span></li>
+                        <li class="skill-item"><span class="skill-name">Machine Learning</span><span class="skill-level-indicator level-high" data-lang-en="High" data-lang-es="Alto">High</span></li>
+                        <li class="skill-item"><span class="skill-name">MLOps</span><span class="skill-level-indicator level-medium" data-lang-en="Intermediate" data-lang-es="Medio">Medium</span></li>
+                        <li class="skill-item"><span class="skill-name">Data Analysis</span><span class="skill-level-indicator level-high" data-lang-en="High" data-lang-es="Alto">High</span></li>
+                    </ul>
+                </div>
+                <!-- Columna 3: Idiomas -->
+                <div class="skills-column interactive-card animate-on-scroll">
+                    <h4 class="skills-category" data-lang-en="Languages" data-lang-es="Idiomas">Languages</h4>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-name" data-lang-en="Spanish" data-lang-es="Español">Spanish</span><span class="skill-level-indicator level-native" data-lang-en="Native" data-lang-es="Nativo">Native</span></li>
+                        <li class="skill-item"><span class="skill-name">English</span><span class="skill-level-indicator level-c1">C1</span></li>
+                    </ul>
                 </div>
             </div>
         </div>

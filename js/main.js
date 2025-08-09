@@ -1,143 +1,127 @@
 document.addEventListener('DOMContentLoaded', function () {
     
-    // --- 1. LANGUAGE TOGGLE FUNCTIONALITY ---
-    const langButtons = document.querySelectorAll('.lang-btn');
-    
-    function setLanguage(lang) {
-        // Update button active state
-        langButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    // --- EFECTO INTERACTIVO DE BRILLO EN TARJETAS ---
+    const interactiveCards = document.querySelectorAll('.interactive-card');
+    interactiveCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
         });
-
-        // Update all elements with data-lang attributes
-        const elementsToTranslate = document.querySelectorAll('[data-lang-en], [data-lang-es]');
-        elementsToTranslate.forEach(el => {
-            const text = el.getAttribute(`data-lang-${lang}`);
-            if (text) {
-                // Use innerHTML to correctly render tags like <br>
-                el.innerHTML = text;
-            }
-        });
-        
-        // Save preference to local storage
-        localStorage.setItem('preferredLanguage', lang);
-    }
-
-    // Set initial language on page load
-    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    setLanguage(preferredLanguage);
-
-    // Add click listeners to language buttons
-    langButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const lang = this.getAttribute('data-lang');
-            setLanguage(lang);
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--mouse-x', `-250px`);
+            card.style.setProperty('--mouse-y', `-250px`);
         });
     });
 
-    // --- 2. SMOOTH SCROLL FOR ANCHOR LINKS ---
+    // --- FUNCIONALIDAD DE CAMBIO DE IDIOMA ---
+    const langButtons = document.querySelectorAll('.lang-btn');
+    function setLanguage(lang) {
+        langButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
+        const elementsToTranslate = document.querySelectorAll('[data-lang-en], [data-lang-es]');
+        elementsToTranslate.forEach(el => {
+            const text = el.getAttribute(`data-lang-${lang}`);
+            if (text) el.innerHTML = text;
+        });
+        localStorage.setItem('preferredLanguage', lang);
+    }
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    setLanguage(preferredLanguage);
+    langButtons.forEach(button => {
+        button.addEventListener('click', function () { setLanguage(this.getAttribute('data-lang')); });
+    });
+
+    // --- SCROLL SUAVE PARA ANCLAS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId.length > 1) { // Ensure it's not just "#"
+            if (targetId.length > 1) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70, // Adjust for fixed nav
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
                 }
             }
         });
     });
 
-    // --- 3. NAVBAR STYLE ON SCROLL ---
+    // --- ESTILO DE NAVBAR AL HACER SCROLL ---
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
+        nav.classList.toggle('scrolled', window.scrollY > 30);
     });
 
-    // --- 4. PROJECT FILTERING ---
+    // --- FILTRADO DE PROYECTOS CON ANIMACIÓN ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
-
     if (filterButtons.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
                 const filterValue = button.getAttribute('data-filter');
 
                 projectCards.forEach(card => {
-                    card.style.display = 'none'; // Hide all cards first
-                    if (filterValue === 'all' || card.classList.contains(filterValue)) {
-                       // Use a fade-in effect
-                       card.style.display = 'block';
-                       card.classList.add('fade-in');
+                    const matchesFilter = filterValue === 'all' || card.classList.contains(filterValue);
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    if (!matchesFilter) {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => card.style.display = 'none', 400);
+                    } else {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                           card.style.opacity = '1';
+                           card.style.transform = 'scale(1)';
+                        }, 50);
                     }
                 });
             });
         });
     }
 
-    // --- 5. INTERSECTION OBSERVER FOR ANIMATIONS (SKILLS & PROJECTS) ---
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observerCallback = (entries, observer) => {
+    // --- INTERSECTION OBSERVER PARA ANIMACIONES DE SCROLL ---
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate skill bars
-                if (entry.target.classList.contains('skills-section')) {
-                    const skillBars = entry.target.querySelectorAll('.skill-progress');
-                    skillBars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-width');
+                entry.target.classList.add('visible');
+                // Animar barras de habilidad específicamente
+                if (entry.target.classList.contains('skills-column')) {
+                    const skillLevels = entry.target.querySelectorAll('.skill-level');
+                    skillLevels.forEach(level => {
+                        const progressBar = level.querySelector('.skill-progress');
+                        progressBar.style.width = level.getAttribute('data-progress');
                     });
-                }
-                // Animate project cards on view
-                if (entry.target.classList.contains('project-card')) {
-                    entry.target.classList.add('visible');
                 }
                 observer.unobserve(entry.target);
             }
         });
-    };
+    }, { threshold: 0.1 });
     
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     
-    // Observe skills section
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-        // Prepare skill bars for animation
-        skillsSection.querySelectorAll('.skill-progress').forEach(bar => {
-            bar.setAttribute('data-width', bar.style.width);
-            bar.style.width = '0';
-        });
-        observer.observe(skillsSection);
-    }
-    
-    // Observe individual project cards for staggered animation
-    document.querySelectorAll('.project-card').forEach(card => {
-        observer.observe(card);
+    // Preparar barras de habilidad para la animación
+    document.querySelectorAll('.skill-level').forEach(level => {
+        const progressBar = level.querySelector('.skill-progress');
+        progressBar.style.width = '0%'; // Inicia en 0 para la animación
     });
 
-    // --- 6. MOBILE MENU (HAMBURGER) ---
+    // --- MENÚ MÓVIL (HAMBURGUESA) ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navRight = document.querySelector('.nav-right');
-
-    if (menuToggle) {
+    if (menuToggle && navRight) {
         menuToggle.addEventListener('click', () => {
             navRight.classList.toggle('active');
             menuToggle.classList.toggle('active');
+        });
+        // Cerrar menú al hacer clic en un enlace (para SPAs o anclas)
+        navRight.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navRight.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
         });
     }
 });
